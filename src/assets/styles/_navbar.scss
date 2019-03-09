@@ -6,9 +6,7 @@
     display: flex;
     height: 50px;
     img {
-      width: 50px;
-      height: 100%;
-      border-radius: 50%;
+      @include circle(50px);
       margin-right: 10px;
     }
   }
@@ -16,8 +14,6 @@
   &-burger {
     margin-left: auto;
     font-size: 1.7rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-center();
   }
 }
