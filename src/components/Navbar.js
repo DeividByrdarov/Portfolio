@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { Link } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons"
 
@@ -18,18 +19,24 @@ const Navbar = () => {
         <p>Deivid Byrdarov</p>
       </div>
       <div className="navbar-burger">
-        <a onClick={_toggleMenu}>
+        <div onClick={_toggleMenu}>
           <FontAwesomeIcon icon={faBars} />
-        </a>
+        </div>
       </div>
       <div className={"navbar-nav" + (menuOpened ? " active" : " closed")}>
-        <a className="navbar-nav-close" onClick={_toggleMenu}>
+        <div className="navbar-nav-close" onClick={_toggleMenu}>
           <FontAwesomeIcon size="2x" icon={faTimes} />
-        </a>
+        </div>
         <ul className="navbar-nav-menu">
-          <li className="navbar-nav-item">Home</li>
-          <li className="navbar-nav-item">About</li>
-          <li className="navbar-nav-item">Contact Me</li>
+          <Link to="/" className="navbar-nav-item">
+            Home
+          </Link>
+          <Link to="/" className="navbar-nav-item">
+            About
+          </Link>
+          <Link to="/" className="navbar-nav-item">
+            Contact Me
+          </Link>
         </ul>
       </div>
     </div>
